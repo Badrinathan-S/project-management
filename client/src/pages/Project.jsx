@@ -3,6 +3,8 @@ import { Link, useParams } from 'react-router-dom';
 import ClientInfo from '../components/ClientInfo';
 import Spinner from '../components/Spinner';
 import { GET_PROJECT } from '../queries/projectQuries';
+import DeleteProjectButton from '../components/DeleteProjectButton';
+import EditProjectForm from '../components/EditProjectForm';
 
 
 const Project = () => {
@@ -25,6 +27,8 @@ const Project = () => {
                 <p>{data.project.status}</p>
 
                 <ClientInfo client={data.project.client} />
+                <EditProjectForm project={data.project} />
+                <DeleteProjectButton projectId={data.project.id} />
             </div>
             }
         </>
